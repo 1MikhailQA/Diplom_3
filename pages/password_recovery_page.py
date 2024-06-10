@@ -1,12 +1,9 @@
-import data
 from locators.main_locators import MainPage
 from locators.password_recovery_locators import PasswordRecoveryLocators
 from pages.base_page import BasePage
 from data import UserData
 from data import Urls
 import allure
-
-
 
 
 class PasswordRecovery(BasePage):
@@ -30,6 +27,7 @@ class PasswordRecovery(BasePage):
     @allure.step('Открытие страницы "Восстановление пароля"')
     def open_page_recovery_password(self):
         self.open_url(f'{Urls.MAIN_PAGE}{Urls.RECOVERY_PASSWORD_PAGE}')
+
     @allure.step('Ввод email для восстановления')
     def input_email(self):
         email_input = self.wait_and_find_element(*PasswordRecoveryLocators.EMAIL_INPUT)
@@ -73,5 +71,3 @@ class PasswordRecovery(BasePage):
         self.open_page_recovery_password()
         self.input_email()
         self.click_recovery_button()
-
-

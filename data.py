@@ -1,6 +1,7 @@
 class Urls:
     MAIN_PAGE = 'https://stellarburgers.nomoreparties.site'
     RECOVERY_PASSWORD_PAGE = '/forgot-password'
+    HISTORY_PAGE = '/account/order-history'
 
 
 

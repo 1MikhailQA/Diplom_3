@@ -10,15 +10,14 @@ def driver(request):
     browser = None
     if request.param == 'firefox':
         options = webdriver.FirefoxOptions()
-        options.add_argument('--start-maximized')
         browser = webdriver.Firefox(options=options)
     elif request.param == 'chrome':
         options = webdriver.ChromeOptions()
-        options.add_argument('--window-size=1920,1080')
         browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     else:
         raise ValueError(f"Unsupported browser: {request.param}")
 
+    browser.maximize_window()
     browser.get(Urls.MAIN_PAGE)
     yield browser
     browser.quit()
