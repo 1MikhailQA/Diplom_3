@@ -56,6 +56,15 @@ class PersonalAccount(BasePage):
         else:
             return False
 
+    @allure.step("Проверка нахождение идентификатора заказа в истории")
+    def found_order_at_history(self, order_id):
+        elements = self.find_until_all_elements_located(PersonalAccountLocators.ORDERS_AT_HISTORY)
+
+        for element in elements:
+            if order_id == element.text:
+                return True
+        return True
+
     @allure.step('Клик по кнопке "Выход"')
     def click_exit_button(self):
         button = self.wait_and_find_element(*PersonalAccountLocators.EXIT_BUTTON)

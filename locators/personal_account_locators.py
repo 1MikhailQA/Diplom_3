@@ -10,3 +10,5 @@ class PersonalAccountLocators:
     HISTORY_ORDERS_BUTTON = (By.XPATH, '//*[@href="/account/order-history"]')
     EXIT_BUTTON = (By.XPATH, "//button[text() = 'Выход']")
     LOGIN_NAME = (By.XPATH, "//h2[text() = 'Вход']")
+    ORDERS_AT_HISTORY = (By.XPATH, "//div[contains(@class, 'OrderHistory_textBox__3lgbs')]/p[contains(@class, "
+                                   "'text_type_digits-default')]")

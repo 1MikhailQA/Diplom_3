@@ -13,11 +13,13 @@ class TestPersonalAccount:
         personal_account_page.click_personal_account_button()
         assert personal_account_page.check_profile_header()
 
+    @allure.step('Переход по клику на «История заказов» после авторизации')
     def test_click_history_orders_button(self, driver):
         personal_account_page = PersonalAccount(driver)
         personal_account_page.personal_account_login()
         assert personal_account_page.click_history_orders() is True
 
+    @allure.step('Переход по клику на «Выход» после авторизации')
     def test_click_exit_button(self, driver):
         personal_account_page = PersonalAccount(driver)
         personal_account_page.personal_account_login()
