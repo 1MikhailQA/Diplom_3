@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class BasicFunctionalityPages:
+    LOGIN_BUTTON_MAIN = (By.XPATH, "//button[text() = 'Войти в аккаунт']")
     BUTTON_CONSTRUCTOR_MAIN = (By.XPATH, "//p[text() = 'Конструктор']")
     TITLE_ASSEMBLE_THE_BURGER = (By.XPATH, '//*[text() = "Соберите бургер"]')
     BUTTON_ORDER_FEED = (By.XPATH, '//p[contains(.,"Лента Заказов")]')
